@@ -6,7 +6,9 @@ const bcrypt = require("bcrypt");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: "*", 
+  methods: "GET,POST",
+  allowedHeaders: "Content-Type, Authorization",}));
 
 const SECRET_KEY = "My_key";
 
